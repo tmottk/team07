@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MigrationItemsTable extends Migration
+class CreateGenderStatisticsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class MigrationItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('marine_mammals_observatison', function (Blueprint $table) {
+        Schema::create('Gender_Statistics', function (Blueprint $table) {
             $table->id();
-            $table->integer('year')->comment('年');; // 年
+            $table->integer('year')->comment('年'); // 年
             $table->string('item')->comment('項目'); // 項目
             $table->integer('total_count')->comment('總數');
-            $table->integer('male_count')->comment('男性人數');
-            $table->integer('female_count')->comment('女性人數');
+            $table->double('male_count')->comment('男性人數');
+            $table->double('female_count')->comment('女性人數');
             $table->timestamps(); // created_at 和 updated_at 欄位
         });
     }
@@ -31,6 +31,6 @@ class MigrationItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('marine_mammals_observatison');
+        Schema::dropIfExists('Gender_Statistics');
     }
 }
