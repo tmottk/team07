@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\GenderStatistic;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,12 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('sdg', 
-function () {
-             return view('intro_sdgs');
-});
+*/
+Route::get('/', [GenderStatistic::class, 'index']);

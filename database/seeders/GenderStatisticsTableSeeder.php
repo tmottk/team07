@@ -41,7 +41,6 @@ class GenderStatisticsTableSeeder extends Seeder
     
     public function run()
     {
-
         for ($i=0; $i<500; $i++)
         {
             $name=$this->generateRandomName();
