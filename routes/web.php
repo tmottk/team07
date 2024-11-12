@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/', [GenderStatistic::class, 'index']);
+Route::get('/', function () {
+    return view('intro_sdgs');
+});
+
+Route::get('sdg', [GenderStatistic::class, 'index']);

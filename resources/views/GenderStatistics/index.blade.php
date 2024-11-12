@@ -1,6 +1,11 @@
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SDG永續經營</title>
+    </head>    
     <body>
-        <h1>調查檔案</h1>
+        <h1>sdg</h1>
         <table border="1">
         @foreach ($GenderStatistics as $GenderStatistic)
             <tr>
