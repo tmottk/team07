@@ -25,4 +25,4 @@ Route::get(
 
 
 
-Route::get('Environmental', [EnvironmentalVolunteersController::class, 'index'])
+Route::get('enviromental', [EnvironmentalVolunteersController::class, 'index'])

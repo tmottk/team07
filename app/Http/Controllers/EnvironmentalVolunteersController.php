@@ -14,7 +14,7 @@ class EnvironmentalVolunteersController extends Controller
      */
     public function index()
     {
-        return view('environmetal.environmental');
+        return view('welcome');
     }
 
     /**
