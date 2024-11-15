@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\OberservationController;
+use App\Http\Controllers\EnvironmentalVolunteersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +19,10 @@ Route::get(
      '/',
     function () 
     {
-       return view('welcome');
+       return view('welocome');
     }
 );
 
-Route::get('observatiosns', [OberservationController::class, 'index']);
+
+
+Route::get('Environmental', [EnvironmentalVolunteersController::class, 'index'])

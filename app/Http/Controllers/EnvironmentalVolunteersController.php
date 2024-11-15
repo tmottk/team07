@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Oberservation;
 use Illuminate\Http\Request;
 
-
-class OberservationController extends Controller
+class EnvironmentalVolunteersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class OberservationController extends Controller
      */
     public function index()
     {
-        //
-        return view('observations.observations');
+        return view('environmetal.environmental');
     }
 
     /**
