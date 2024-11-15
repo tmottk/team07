@@ -12,7 +12,7 @@
    line-height: 1.6;
  }
  
- /* Header 樣式 */
+
  header {
    background-color: #2c7f7b;
    color: white;
@@ -23,14 +23,9 @@
    font-size: 3rem;
    margin-bottom: 10px;
  }
- 
- header p {
-   font-size: 1.2rem;
- }
- 
- /* 主要內容區域 */
+  
  .container {
-   width: 50%;
+   width: 40%;
    margin: 0 auto;
    padding: 20px 0;
  }
@@ -43,8 +38,13 @@
    border-radius: 8px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
  }
+
+ .intro img{
+   float: center;
+ }
  
  .intro h2 {
+   text-align: center;
    font-size: 2rem;
    color: #2c7f7b;
    margin-bottom: 15px;
@@ -53,9 +53,11 @@
  .intro p {
    font-size: 1.1rem;
    color: #555;
+   text-align: center;
  }
  .intro img {
-    text-align: center;
+   display: block;
+   margin: auto;
  }
  
  /* 詳細措施區域 */
@@ -127,22 +129,75 @@
  footer p {
    font-size: 1rem;
  }
+
+ .cont h2{
+   text-align: center;
+   text-align: center;
+   font-size: 2rem;
+   color: #2c7f7b;
+   margin-bottom: 15px;
+ }
+
+.Target {
+   align-items: center;
+   width: 40%;
+   margin: 0 auto;
+   padding: 20px 0;
+ }
+
+ .Target {
+  text-align: center;
+ }
+
+.Target img {
+   max-width: 30%;
+   height: auto;
+ }
+
  </style>  
 </head>
 <body>
   <header>
     <div class="container">
       <h1>SDG 1：終結貧窮</h1>
-      <p>全球致力於消除一切形式的貧窮，讓所有人享有平等機會。</p>
     </div>
   </header>
+
+
 
   <section class="intro">
     <div class="container">
       <img src="article-615ff54ce7aaa.jpg" width="400"> 
-      <h2>終結貧窮的目標</h2>
-      <p>貧窮是全球面臨的重大挑戰，SDG 1 目標致力於消除所有形式的貧窮，包括極端貧窮，並促進每個人平等的機會，無論在教育、就業還是資源分配方面。</p>
+      <h2>終結貧窮的終極目標</h2>
+      <p>消除各地一切形式的貧窮。</p>
     </div>
+  </section>
+
+  <section class="cont">
+      <h2>主要目標</h2>
+      <div class="Target">
+       <img src="l1.jpg">
+       <h3>終結極端貧窮</h3>
+       <p>在西元2030年前，消除所有地方的極端貧窮，目前的定義為每日的生活費不到1.25美元。</p>
+       <img src="l2.jpg">
+       <h3>至少減少50%的貧窮</h3>
+       <p>在西元 2030 年前，依據國家的人口統計數字，將各個年齡層的貧窮男女與兒童人數減少一半。</p>
+       <img src="l3.jpg">
+       <h3>實施社會保障制度</h3>
+       <p>對所有的人，包括底層的人，實施適合國家的社會保護制度措施，到了西元2030年，範圍涵蓋貧窮與弱勢族群。</p>
+       <img src="l4.jpg">
+       <h3>所有權、基本服務、技術和經濟資源取得權利的平等</h3>
+       <p>在西元 2030 年前，確保所有的男男女女，尤其是貧窮與 弱勢族群，在經濟資源、基本服務、以及土地與其他形 式的財產、繼承、天然資源、新科技與財務服務(包括微型貸款)都有公平的權利與取得權。</p>
+       <img src="l5.jpg">
+       <h3>建立具韌性面對環境、經濟和社會災難的能力</h3>
+       <p>在西元 2030 年前，讓貧窮與弱勢族群具有災後復原能力，減少他們暴露於氣候極端事件與其他社經與環境災害的頻率與受傷害的嚴重度。</p>
+       <img src="l6.jpg">
+       <h3>調動資源以實施脫貧政策</h3>
+       <p>確保各個地方的資源能夠大幅動員，包括改善發展合作， 為開發中國家提供妥善且可預測的方法，尤其是最低度開發國家(以下簡稱 LDCs)，以實施計畫與政策，全面消除它們國內的貧窮。</p>
+       <img src="l7.jpg">
+       <h3>建立有利於窮人和對性別問題敏感的政策框架</h3>
+       <p>依據考量到貧窮與兩性的發展策略，建立國家的、區域的與國際層級的妥善政策架構，加速消除貧窮行動。</p>
+      </div>
   </section>
 
   <section class="details">
@@ -162,7 +217,7 @@
       <h2>一起行動，終結貧窮</h2>
       <p>每個人都可以為終結貧窮作出貢獻，無論是支持公益項目，還是倡導社會公平。讓我們一起為未來創建一個無貧窮的世界！</p>
       <a href="sdg">
-        <button class="btn btn-primary">跳轉到性別統計</button>
+        <button class="btn btn-primary">資料表</button>
       </a>
     </div>
   </section>
