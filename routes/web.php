@@ -15,14 +15,14 @@ use App\Http\Controllers\EnvironmentalVolunteersController;
 |
 */
 
-Route::get(
-     '/',
-    function () 
-    {
-       return view('welocome');
-    }
-);
+Route::get('/', function () {
+   return view('welcome');
+});
+
+Route::get('/', function () {
+    return view('intro_sdgs');
+});
 
 
 
-Route::get('enviromental', [EnvironmentalVolunteersController::class, 'index'])
+Route::get('sdg', [EnvironmentalVolunteersController::class, 'index']);

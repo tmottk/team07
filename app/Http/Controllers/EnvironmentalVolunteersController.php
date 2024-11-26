@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Oberservation;
 use Illuminate\Http\Request;
+use App\Models\environmentalvolunteers;
+class environmentalvolunteers extends Controller
 
 class EnvironmentalVolunteersController extends Controller
 {
