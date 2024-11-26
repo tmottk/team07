@@ -14,15 +14,15 @@ use App\Http\Controllers\EnvironmentalVolunteersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
    return view('welcome');
 });
 
 Route::get('/', function () {
-    return view('intro_sdgs');
+    return view('environmental.index');
 });
+*/
 
 
-
-Route::get('sdg', [EnvironmentalVolunteersController::class, 'index']);
+Route::get('/', [EnvironmentalVolunteersController::class, 'index'])->name('environmentalvolunteers.index');

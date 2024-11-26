@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\environmentalvolunteers;
-class environmentalvolunteers extends Controller
-
 class EnvironmentalVolunteersController extends Controller
+
+
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,11 @@ class EnvironmentalVolunteersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('welcome');
+    {   
+        //
+        $environmentalvolunteers = environmentalvolunteers::all();
+
+        return view('environmental.index',compact('environmentalvolunteers'));
     }
 
     /**
