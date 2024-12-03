@@ -51,6 +51,8 @@ class EnvironmentalVolunteersController extends Controller
     public function show($id)
     {
         //
+        $environmentalvolunteer = EnvironmentalVolunteers::findOrFail($id);
+        return view('environmental.show')->with('environmentalvolunteer', $environmentalvolunteer);
     }
 
     /**

@@ -26,3 +26,5 @@ Route::get('/', function () {
 
 
 Route::get('/', [EnvironmentalVolunteersController::class, 'index'])->name('environmentalvolunteers.index');
+Route::get('environmentalvolunteers/{id}', [EnvironmentalVolunteersController::class, 'show'])->where('id', '[0-9]+')->name('environmentalvolunteer.show');
+Route::get('environmentalvolunteers/{id}/edit', [EnvironmentalVolunteersController::class, 'destroy'])->where('id', '[0-9]+')->name('environmentalvolunteer.edit');

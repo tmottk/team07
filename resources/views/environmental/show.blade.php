@@ -13,7 +13,7 @@
             <th>操作1</th>
             <th>操作2</th>
         </tr>
-        @foreach ($environmentalvolunteers as $environmentalvolunteer)
+        
             <tr>
                 <td>{{$environmentalvolunteer ->year}}</td>
                 <td>{{$environmentalvolunteer ->project}}</td>
@@ -23,9 +23,6 @@
                 <td><a href="{{ route('environmentalvolunteer.show', ['id' => $environmentalvolunteer->id]) }}">顯示</a></td>
                 <td><a href="{{ route('environmentalvolunteer.edit', ['id' => $environmentalvolunteer->id]) }}">編輯</a></td>
             </tr>
-        @endforeach
+        
     </table>
 @stop
-
-
-
