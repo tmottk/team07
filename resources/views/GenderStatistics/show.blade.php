@@ -15,7 +15,6 @@
                 <th>操作2</th>
                 <th>操作3</th>
             </tr>
-        @foreach ($GenderStatistics as $GenderStatistic)
             <tr>
                 <td>{{$GenderStatistic ->year}}</td>
                 <td>{{$GenderStatistic ->item}}</td>
@@ -32,6 +31,5 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
         </table>
 @stop

@@ -17,7 +17,8 @@ class GenderStatistic extends Controller
         
         
         $GenderStatistics = GenderStatistics::all();
-        return view('GenderStatistics.index',compact('GenderStatistics'));
+        //return view('GenderStatistics.index',compact('GenderStatistics'));
+        return view('GenderStatistics.index')->with('GenderStatistics', $GenderStatistics);
         
     }
 
@@ -50,7 +51,8 @@ class GenderStatistic extends Controller
      */
     public function show($id)
     {
-        //
+        $GenderStatistic = GenderStatistics::findOrFail($id);
+        return view('GenderStatistics.show')->with('GenderStatistic', $GenderStatistic);
     }
 
     /**
@@ -84,6 +86,8 @@ class GenderStatistic extends Controller
      */
     public function destroy($id)
     {
-        //
+        $GenderStatistic = GenderStatistics::findOrFail($id);
+        $GenderStatistic ->delete();
+        return redirect('GenderStatistics');
     }
 }

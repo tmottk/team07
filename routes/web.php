@@ -21,4 +21,12 @@ Route::get('/', function () {
     return view('intro_sdgs');
 });
 
-Route::get('sdg', [GenderStatistic::class, 'index']);
+Route::get('GenderStatistics', [GenderStatistic::class, 'index'])->where('id', '[0-9]+')->name('GenderStatistics.index');
+Route::get('GenderStatistics/{id}', [GenderStatistic::class, 'show'])->where('id', '[0-9]+')->name('GenderStatistics.show');
+Route::get('GenderStatistics/{id}/edit', [GenderStatistic::class, 'edit'])->where('id', '[0-9]+')->name('GenderStatistics.edit');
+Route::delete('GenderStatistics/delete/{id}', [GenderStatistic::class, 'destroy'])->where('id', '[0-9]+')->name('teams.destroy');
+
+Route::get('test', function() { 
+    return view('heard');
+});
+
