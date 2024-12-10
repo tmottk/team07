@@ -28,7 +28,7 @@ class EnvironmentalVolunteersController extends Controller
      */
     public function create()
     {
-        //
+        return view("environmentalvolunteers.create");
     }
 
     /**
@@ -86,6 +86,8 @@ class EnvironmentalVolunteersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $environmentalvolunteers = environmentalvolunteers::findOrFail($id);
+        $environmentalvolunteers->delete();
+        return redirect('environmentalvolunteers');
     }
 }
