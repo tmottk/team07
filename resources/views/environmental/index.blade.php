@@ -29,7 +29,8 @@
                         <input class="btn btn-default" type="submit" value="刪除" />
                         @method('delete')
                         @csrf
-                    </form>  
+                    </form>
+                </td>     
             </tr>
         @endforeach
     </table>
