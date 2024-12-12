@@ -150,13 +150,7 @@
             width: 50%;
             text-align: center;
         }
-        .table th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-        .table th {
-            background-color: #f4f4f4;
-        }
+
 
     </style>
 </head>

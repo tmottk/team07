@@ -4,6 +4,7 @@
 
 @section('tab')
         <h1>人數統計表</h1>
+        <a href={{ route('GenderStatistics.create') }}>新增資料</a>
         <table border="1">
             <tr>
                 <th>年份</th>

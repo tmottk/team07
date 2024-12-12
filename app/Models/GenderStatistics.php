@@ -9,4 +9,12 @@ class GenderStatistics extends Model
 {
     use HasFactory;
     protected $table = "gender_statistics";
+
+    protected $fillable=[
+        'year',
+        'item',
+        'total_count',
+        'male_count', 
+        'female_count',
+    ];
 }

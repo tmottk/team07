@@ -29,7 +29,7 @@ class GenderStatistic extends Controller
      */
     public function create()
     {
-        //
+        return view('GenderStatistics.create');
     }
 
     /**
@@ -40,7 +40,17 @@ class GenderStatistic extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+            'year',
+            'item',
+            'total_count',
+            'male_count', 
+            'female_count',
+        ]);
+
+        $GenderStatistics = GenderStatistics::create($data);
+
+        return redirect('GenderStatistics');
     }
 
     /**
