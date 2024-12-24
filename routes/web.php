@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('GenderStatistics', [GenderStatistic::class, 'index'])->where('id', '[0-9]+')->name('GenderStatistics.index');
 Route::get('GenderStatistics/{id}', [GenderStatistic::class, 'show'])->where('id', '[0-9]+')->name('GenderStatistics.show');
 Route::get('GenderStatistics/{id}/edit', [GenderStatistic::class, 'edit'])->where('id', '[0-9]+')->name('GenderStatistics.edit');
+Route::patch('GenderStatistics/update/{id}', [GenderStatistic::class, 'update'])->where('id', '[0-9]+')->name('GenderStatistics.update');
 Route::delete('GenderStatistics/delete/{id}', [GenderStatistic::class, 'destroy'])->where('id', '[0-9]+')->name('GenderStatistics.destroy');
 Route::get('GenderStatistics/create', [GenderStatistic::class, 'create'])->name('GenderStatistics.create');
 Route::post('GenderStatistics/store', [GenderStatistic::class, 'store'])->name('GenderStatistics.store');

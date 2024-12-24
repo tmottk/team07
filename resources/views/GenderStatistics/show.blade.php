@@ -3,8 +3,9 @@
 @section('title', '資料表')
 
 @section('tab')
-        <h1>人數統計表</h1>
-        <table border="1">
+    <h1>人數統計表</h1>
+    <table border="1" class="tables">
+        <thead>
             <tr>
                 <th>年份</th>
                 <th>項目</th>
@@ -15,12 +16,14 @@
                 <th>操作2</th>
                 <th>操作3</th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
-                <td>{{$GenderStatistic ->year}}</td>
-                <td>{{$GenderStatistic ->item}}</td>
-                <td>{{$GenderStatistic ->total_count}}</td>
-                <td>{{$GenderStatistic ->male_count}}</td>
-                <td>{{$GenderStatistic ->female_count}}</td>
+                <td>{{ $GenderStatistic->year }}</td>
+                <td>{{ $GenderStatistic->item }}</td>
+                <td>{{ $GenderStatistic->total_count }}</td>
+                <td>{{ $GenderStatistic->male_count }}</td>
+                <td>{{ $GenderStatistic->female_count }}</td>
                 <td><a href="{{ route('GenderStatistics.show', ['id' => $GenderStatistic->id]) }}">顯示</a></td>
                 <td><a href="{{ route('GenderStatistics.edit', ['id' => $GenderStatistic->id]) }}">編輯</a></td>
                 <td>
@@ -31,5 +34,6 @@
                     </form>
                 </td>
             </tr>
-        </table>
+        </tbody>
+    </table>
 @stop

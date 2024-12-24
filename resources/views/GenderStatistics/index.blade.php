@@ -3,9 +3,10 @@
 @section('title', '資料表')
 
 @section('tab')
-        <h1>人數統計表</h1>
-        <a href={{ route('GenderStatistics.create') }}>新增資料</a>
-        <table border="1">
+    <h1>人數統計表</h1>
+    <a href={{ route('GenderStatistics.create') }} class="link">新增資料</a>
+    <table border="1" class="tables">
+        <thead>
             <tr>
                 <th>年份</th>
                 <th>項目</th>
@@ -16,23 +17,26 @@
                 <th>操作2</th>
                 <th>操作3</th>
             </tr>
+        </thead>
         @foreach ($GenderStatistics as $GenderStatistic)
-            <tr>
-                <td>{{$GenderStatistic ->year}}</td>
-                <td>{{$GenderStatistic ->item}}</td>
-                <td>{{$GenderStatistic ->total_count}}</td>
-                <td>{{$GenderStatistic ->male_count}}</td>
-                <td>{{$GenderStatistic ->female_count}}</td>
-                <td><a href="{{ route('GenderStatistics.show', ['id' => $GenderStatistic->id]) }}">顯示</a></td>
-                <td><a href="{{ route('GenderStatistics.edit', ['id' => $GenderStatistic->id]) }}">編輯</a></td>
-                <td>
-                    <form action="{{ url('/GenderStatistics/delete', ['id' => $GenderStatistic->id]) }}" method="post">
-                        <input class="btn btn-default" type="submit" value="刪除" />
-                        @method('delete')
-                        @csrf
-                    </form>
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>{{ $GenderStatistic->year }}</td>
+                    <td>{{ $GenderStatistic->item }}</td>
+                    <td>{{ $GenderStatistic->total_count }}</td>
+                    <td>{{ $GenderStatistic->male_count }}</td>
+                    <td>{{ $GenderStatistic->female_count }}</td>
+                    <td><a href="{{ route('GenderStatistics.show', ['id' => $GenderStatistic->id]) }}">顯示</a></td>
+                    <td><a href="{{ route('GenderStatistics.edit', ['id' => $GenderStatistic->id]) }}">編輯</a></td>
+                    <td>
+                        <form action="{{ url('/GenderStatistics/delete', ['id' => $GenderStatistic->id]) }}" method="post">
+                            <input class="btn btn-default" type="submit" value="刪除" />
+                            @method('delete')
+                            @csrf
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
         @endforeach
-        </table>
+    </table>
 @stop

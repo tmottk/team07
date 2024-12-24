@@ -73,7 +73,8 @@ class GenderStatistic extends Controller
      */
     public function edit($id)
     {
-        //
+        $GenderStatistic = GenderStatistics::findOrFail($id);
+        return view('GenderStatistics.edit')->with('GenderStatistic', $GenderStatistic);
     }
 
     /**
@@ -85,7 +86,22 @@ class GenderStatistic extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $GenderStatistic = GenderStatistics::findOrFail($id);
+
+        $data = $request->only([
+            'year',
+            'item',
+            'total_count',
+            'male_count', 
+            'female_count',
+        ]);
+
+        $GenderStatistic ->fill($data);
+
+        $GenderStatistic ->save();
+
+        return redirect('GenderStatistics');
+
     }
 
     /**

@@ -151,46 +151,74 @@
             text-align: center;
         }
 
+        .tables {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
 
+        .tables thead tr {
+            background-color: #4caf50;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .tables th,.tables td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .tables tbody tr {
+            background-color: #d4edda;
+            transition: all 0.3s ease;
+        }
+
+        .tables tbody tr:nth-of-type(even) {
+            background-color: #c8e6c9;
+        }
+
+        .tables tbody tr:hover {
+            background-color: #81c784;
+        }
     </style>
 </head>
 
 <body>
     <header>
-      <div class="container">
-        <h1>SDG 1：終結貧窮</h1>
-      </div>
+        <div class="container">
+            <h1>SDG 1：終結貧窮</h1>
+        </div>
     </header>
 
     <section class="intro">
-      <div class="container">
-        @yield('theme')
-      </div>
+        <div class="container">
+            @yield('theme')
+        </div>
     </section>
 
     <section class="cont">
-      <div class="Target">
-        @yield('a')
-    </div>
-  </section>
+        <div class="Target">
+            @yield('a')
+        </div>
+    </section>
 
-  <section class="details">
-    <div class="container">
-        @yield('b')
-  </section>
+    <section class="details">
+        <div class="container">
+            @yield('b')
+    </section>
 
-  <section class="table">
-    <div class="container">
-      @yield('tab')
-    </div>
-  </section>
+    <section class="table">
+        @yield('tab')
+    </section>
 
     <section class="call-to-action">
-      @include("heard")
+        @include('heard')
     </section>
 
     <footer>
-      @include("footer")
+        @include('footer')
     </footer>
 </body>
 
