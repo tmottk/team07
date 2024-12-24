@@ -20,10 +20,10 @@
                 <td>{{$environmentalvolunteer ->total_volunteers}}</td>
                 <td>{{$environmentalvolunteer ->male_volunteers}}</td>
                 <td>{{$environmentalvolunteer->female_volunteers}}</td>
-                <td><a href="{{ route('environmentalvolunteer.show', ['id' => $environmentalvolunteer->id]) }}">顯示</a></td>
-                <td><a href="{{ route('environmentalvolunteer.edit', ['id' => $environmentalvolunteer->id]) }}">編輯</a></td>
+                <td><a href="{{ route('environmentalvolunteers.show', ['id' => $environmentalvolunteer->id]) }}">顯示</a></td>
+                <td><a href="{{ route('environmentalvolunteers.edit', ['id' => $environmentalvolunteer->id]) }}">編輯</a></td>
                 <td> 
-                    <form action="{{ url('/environmentalvolunteer/delete', ['id' => $environmentalvolunteer->id]) }}" method="post">
+                    <form action="{{ url('/environmentalvolunteers/delete', ['id' => $environmentalvolunteer->id]) }}" method="post">
                         <input class="btn btn-default" type="submit" value="刪除" />
                         @method('delete')
                         @csrf

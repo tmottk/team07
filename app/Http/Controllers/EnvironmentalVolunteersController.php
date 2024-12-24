@@ -28,7 +28,7 @@ class EnvironmentalVolunteersController extends Controller
      */
     public function create()
     {
-        return view("environmentalvolunteers.create");
+        return view("environmental.create");
     }
 
     /**
@@ -39,7 +39,18 @@ class EnvironmentalVolunteersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+            'year',
+            'project',
+            'total_volunteers',
+            'male_volunteers',
+            'female_volunteers',
+        ]);
+
+        $environmental = environmentalvolunteers::create($data);
+
+        return redirect('environmentalvolunteers');
+    
     }
 
     /**
