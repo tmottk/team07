@@ -33,3 +33,4 @@ Route::get('environmentalvolunteers/{id}', [EnvironmentalVolunteersController::c
 Route::get('environmentalvolunteers/{id}/edit', [EnvironmentalVolunteersController::class, 'edit'])->where('id', '[0-9]+')->name('environmentalvolunteers.edit');
 Route::delete('environmentalvolunteers/delete/{id}', [EnvironmentalVolunteersController::class, 'destroy'])->where('id', '[0-9]+')->name('environmentalvolunteers.destroy');
 Route::get('environmentalvolunteers/create', [EnvironmentalVolunteersController::class, 'create'])->name('environmentalvolunteers.create');
+Route::patch('environmentalvolunteers/update/{id}', [EnvironmentalVolunteersController::class, 'update'])->where('id', '[0-9]+')->name('environmentalvolunteers.update');
