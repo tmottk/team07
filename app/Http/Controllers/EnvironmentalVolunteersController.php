@@ -76,7 +76,7 @@ class EnvironmentalVolunteersController extends Controller
     {
         $environmentalvolunteer = EnvironmentalVolunteers::findOrFail($id);
 
-        return view("Environmental.edit")->with('environmentalvolunteer',$environmentalvolunteer);
+        return view("environmental.edit")->with('environmentalvolunteer',$environmentalvolunteer);
     }
 
     /**
@@ -88,7 +88,7 @@ class EnvironmentalVolunteersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $evnironmentalvolunteers = evnironmentalvolunteer::findOrFail($id);
+        $environmentalvolunteer = environmentalvolunteers::findOrFail($id);
 
         $data = $request->only([
             'year',
@@ -98,11 +98,11 @@ class EnvironmentalVolunteersController extends Controller
             'female_volunteers',
         ]);
 
-        $evnironmentalvolunteers->fill($data);
+        $environmentalvolunteer->fill($data);
 
-        $evnironmentalvolunteers->save();
+        $environmentalvolunteer->save();
 
-        return redirect('evnironmentalvolunteers');
+        return redirect('environmentalvolunteers');
     }
 
     /**

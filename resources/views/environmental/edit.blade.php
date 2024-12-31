@@ -6,8 +6,8 @@
 
 編輯特定一筆資料表單
 
-{!! Form::model($environmentalvolunteer, ['method'=>'PATCH', 'action'=>['\app\Http\Controllers\EnvironmentalVolunteersController@update', $environmentalvolunteer->id]]) !!}
-    @include('environmentalvolunteers.form', ['submitButtonText'=>"修改東東資料"])
+{!! Form::model($environmentalvolunteer, ['method'=>'PATCH', 'action'=>['\App\Http\Controllers\EnvironmentalVolunteersController@update', $environmentalvolunteer->id]]) !!}
+    @include('environmental.form', ['submitButtonText'=>"修改東東資料"])
 {!! Form::close() !!}
 
 @endsection
