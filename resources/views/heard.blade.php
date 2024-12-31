@@ -4,7 +4,7 @@
     <a href="/">
       <button class="btn btn-primary">首頁</button>
     </a>
-    <a href="GenderStatistics">
+    <a href="/GenderStatistics">
       <button class="btn btn-primary">資料表</button>
     </a>
 </div>

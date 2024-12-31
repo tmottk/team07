@@ -165,7 +165,8 @@
             font-weight: bold;
         }
 
-        .tables th,.tables td {
+        .tables th,
+        .tables td {
             padding: 12px 15px;
             border: 1px solid #ddd;
         }
@@ -182,6 +183,7 @@
         .tables tbody tr:hover {
             background-color: #81c784;
         }
+
     </style>
 </head>
 

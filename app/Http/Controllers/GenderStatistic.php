@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use App\Http\Requests\CreateArticleRequest;
 use App\Models\GenderStatistics;
 class GenderStatistic extends Controller
 {
@@ -38,7 +39,7 @@ class GenderStatistic extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateArticleRequest $request)
     {
         $data = $request->only([
             'year',
@@ -84,7 +85,7 @@ class GenderStatistic extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateArticleRequest $request, $id)
     {
         $GenderStatistic = GenderStatistics::findOrFail($id);
 
