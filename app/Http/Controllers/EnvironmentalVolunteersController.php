@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use App\Http\Requeate\CreateDemoRequest;
 use App\Models\environmentalvolunteers;
 class EnvironmentalVolunteersController extends Controller
 
@@ -37,7 +38,7 @@ class EnvironmentalVolunteersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateDemoRequest $request)
     {
         $data = $request->only([
             'year',
@@ -86,7 +87,7 @@ class EnvironmentalVolunteersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateDemoRequest $request, $id)
     {
         $environmentalvolunteer = environmentalvolunteers::findOrFail($id);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\CreateDemoRequest;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -37,6 +37,7 @@ class CreateDemoRequest extends FormRequest
 
     public function messages()
     {
+        return [
         "year.required" => "年份 為必填"
         "year.min" => "年份 為必填"
         "project.required" => "項目 為必填"
@@ -45,6 +46,9 @@ class CreateDemoRequest extends FormRequest
         "total_volunteers.min" => "總人數 為必填"
         "male_volunteers.required" => "男性人數	為必填"
         "male_volunteer.min" => "男性人數 為必填"
+        "female_volunteers.required" => "女性人數 為必填"
+        "female_volunteers" => "女性人數 為必填"
+        ];
 
     }
 }

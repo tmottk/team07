@@ -5,6 +5,8 @@
 @section('content')
 
 新增表單
+@include('message.list')
+
 
 {!! Form::open(['url' => 'environmentalvolunteers/store']) !!}
     @include('environmental.form', ['submitButtonText'=>'新增東東資料'])

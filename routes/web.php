@@ -34,3 +34,6 @@ Route::get('environmentalvolunteers/{id}/edit', [EnvironmentalVolunteersControll
 Route::delete('environmentalvolunteers/delete/{id}', [EnvironmentalVolunteersController::class, 'destroy'])->where('id', '[0-9]+')->name('environmentalvolunteers.destroy');
 Route::get('environmentalvolunteers/create', [EnvironmentalVolunteersController::class, 'create'])->name('environmentalvolunteers.create');
 Route::patch('environmentalvolunteers/update/{id}', [EnvironmentalVolunteersController::class, 'update'])->where('id', '[0-9]+')->name('environmentalvolunteers.update');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
