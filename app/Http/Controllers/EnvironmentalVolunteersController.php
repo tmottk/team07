@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 //use Illuminate\Http\Request;
-use App\Http\Requeate\CreateDemoRequest;
+use App\Http\Requests\CreateDemoRequest;
 use App\Models\environmentalvolunteers;
 class EnvironmentalVolunteersController extends Controller
-
-
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=>'index']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
