@@ -1,4 +1,4 @@
-a日@extends('app')
+@extends('app')
 
 @section('title', '資料表')
 
@@ -12,8 +12,12 @@ a日@extends('app')
                 <th>男性人數</th>
                 <th>女性人數</th>
                 <th>操作1</th>
+                @can("admin")
                 <th>操作2</th>
                 <th>操作3</th>
+                @elsecan("manager")
+                <th>操作2</th>
+                @endcan
             </tr>
             @foreach ($environmentalvolunteers as $environmentalvolunteer)
                 <tr>
@@ -23,19 +27,19 @@ a日@extends('app')
                     <td>{{ $environmentalvolunteer->male_volunteers }}</td>
                     <td>{{ $environmentalvolunteer->female_volunteers }}</td>
                     <td><a href="{{ route('environmentalvolunteers.show', ['id' => $environmentalvolunteer->id]) }}">顯示</a></td>
-                    @can('amdin')
+                        @can('admin')
                         <td><a href="{{ route('environmentalvolunteers.edit', ['id' => $environmentalvolunteer->id]) }}">編輯</a></td>
                         <td>
                             <form action="{{ url('/environmentalvolunteers/delete', ['id' => $environmentalvolunteer->id]) }}"
-                                method="post">
-                                <input class="btn btn-default" type="submit" value="刪除" />
-                                @method('delete')
-                                @csrf
+                            method="post">
+                            <input class="btn btn-default" type="submit" value="刪除" />
+                            @method('delete')
+                            @csrf
                             </form>
                         </td>
-                    @elsecan('manager')
+                        @elsecan('manager')
                         <td><a href="{{ route('environmentalvolunteers.edit', ['id' => $environmentalvolunteer->id]) }}">修改</a></td>
-                    @endcan
+                        @endcan
 
                 </tr>
             @endforeach

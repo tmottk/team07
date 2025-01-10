@@ -25,6 +25,10 @@ Route::get('/', function () {
 */
 #新增表單
 
+Route::get('/', function () {
+    return view('intro_sdgs');
+});
+
 
 
 Route::post('environmentalvolunteers/store',[EnvironmentalVolunteersController::class, 'store'])->name('environmentalvolunteers.store');

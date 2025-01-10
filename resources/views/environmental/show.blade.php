@@ -11,7 +11,12 @@
             <th>男性人數</th>
             <th>女性人數</th>
             <th>操作1</th>
+            @can("admin")
             <th>操作2</th>
+            <th>操作3</th>
+            @elsecan("manager")
+            <th>操作2</th>
+            @endcan
         </tr>
         
             <tr>
@@ -20,7 +25,9 @@
                 <td>{{$environmentalvolunteer ->total_volunteers}}</td>
                 <td>{{$environmentalvolunteer ->male_volunteers}}</td>
                 <td>{{$environmentalvolunteer->female_volunteers}}</td>
+               
                 <td><a href="{{ route('environmentalvolunteers.show', ['id' => $environmentalvolunteer->id]) }}">顯示</a></td>
+                @can('admin')
                 <td><a href="{{ route('environmentalvolunteers.edit', ['id' => $environmentalvolunteer->id]) }}">編輯</a></td>
                 <td> 
                     <form action="{{ url('/environmentalvolunteers/delete', ['id' => $environmentalvolunteer->id]) }}" method="post">
@@ -29,6 +36,9 @@
                         @csrf
                     </form>  
                 </td>
+            @elsecan('manager')
+                        <td><a href="{{ route('environmentalvolunteers.edit', ['id' => $environmentalvolunteer->id]) }}">修改</a></td>
+                        @endcan
             </tr>
         
     </table>
