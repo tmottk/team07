@@ -7,6 +7,13 @@ use App\Http\Requests\CreateArticleRequest;
 use App\Models\GenderStatistics;
 class GenderStatistic extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth',['excpet'=>'index']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

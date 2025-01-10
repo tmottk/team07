@@ -4,7 +4,9 @@
 
 @section('tab')
     <h1>人數統計表</h1>
+    @can('admin')
     <a href={{ route('GenderStatistics.create') }} class="link">新增資料</a>
+    @endcan
     <table border="1" class="tables">
         <thead>
             <tr>
@@ -14,8 +16,12 @@
                 <th>男性人數</th>
                 <th>女性人數</th>
                 <th>操作1</th>
+                @can('admin')
                 <th>操作2</th>
                 <th>操作3</th>
+                @elsecan('manager')
+                <th>操作2</th>
+                @endcan
             </tr>
         </thead>
         @foreach ($GenderStatistics as $GenderStatistic)
@@ -27,6 +33,7 @@
                     <td>{{ $GenderStatistic->male_count }}</td>
                     <td>{{ $GenderStatistic->female_count }}</td>
                     <td><a href="{{ route('GenderStatistics.show', ['id' => $GenderStatistic->id]) }}">顯示</a></td>
+                    @can('admin')
                     <td><a href="{{ route('GenderStatistics.edit', ['id' => $GenderStatistic->id]) }}">編輯</a></td>
                     <td>
                         <form action="{{ url('/GenderStatistics/delete', ['id' => $GenderStatistic->id]) }}" method="post">
@@ -35,6 +42,9 @@
                             @csrf
                         </form>
                     </td>
+                    @elsecan('manager')
+                    <td><a href="{{ route('GenderStatistics.edit', ['id' => $GenderStatistic->id]) }}">編輯</a></td>
+                    @endcan
                 </tr>
             </tbody>
         @endforeach

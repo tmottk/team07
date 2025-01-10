@@ -24,7 +24,7 @@ class CreateArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'year' => 'required|numeric|min:0|max:113',
+            'year' => 'required|numeric|min:0|max:114',
             'item' => 'required|string|max:255',
             'total_count' => 'required|numeric|min:0',
             'male_count' => 'required|numeric|min:0',
@@ -38,7 +38,7 @@ class CreateArticleRequest extends FormRequest
             'year.required' => '年份欄位是必填的。',
             'year.numeric' => '年份必須是數字。',
             'year.min' => '年份不能小於 0。',
-            'year.max' => '年份不能大於 113。',
+            'year.max' => '年份不能大於 114。',
             'item.required' => '項目欄位是必填的。',
             'item.string' => '項目必須是字串。',
             'item.max' => '項目不能超過 255 個字元。',

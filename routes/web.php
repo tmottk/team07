@@ -23,12 +23,16 @@ Route::get('/', function () {
 
 Route::get('GenderStatistics', [GenderStatistic::class, 'index'])->where('id', '[0-9]+')->name('GenderStatistics.index');
 Route::get('GenderStatistics/{id}', [GenderStatistic::class, 'show'])->where('id', '[0-9]+')->name('GenderStatistics.show');
-Route::get('GenderStatistics/{id}/edit', [GenderStatistic::class, 'edit'])->where('id', '[0-9]+')->name('GenderStatistics.edit');
+Route::get('GenderStatistics/{id}/edit', [GenderStatistic::class, 'edit'])->where('id', '[0-9]+')->name('GenderStatistics.edit')->middleware('role:admin,manager');
 Route::patch('GenderStatistics/update/{id}', [GenderStatistic::class, 'update'])->where('id', '[0-9]+')->name('GenderStatistics.update');
-Route::delete('GenderStatistics/delete/{id}', [GenderStatistic::class, 'destroy'])->where('id', '[0-9]+')->name('GenderStatistics.destroy');
-Route::get('GenderStatistics/create', [GenderStatistic::class, 'create'])->name('GenderStatistics.create');
-Route::post('GenderStatistics/store', [GenderStatistic::class, 'store'])->name('GenderStatistics.store');
+Route::delete('GenderStatistics/delete/{id}', [GenderStatistic::class, 'destroy'])->where('id', '[0-9]+')->name('GenderStatistics.destroy')->middleware('can:admin');
+Route::get('GenderStatistics/create', [GenderStatistic::class, 'create'])->name('GenderStatistics.create')->middleware('can:admin');
+Route::post('GenderStatistics/store', [GenderStatistic::class, 'store'])->name('GenderStatistics.store')->middleware('can:admin');
 Route::get('test', function() { 
     return view('heard');
 });
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

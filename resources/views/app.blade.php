@@ -184,44 +184,63 @@
             background-color: #81c784;
         }
 
+        
+
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1>SDG 1：終結貧窮</h1>
+    <div
+        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        @if (Route::has('login'))
+            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                @auth
+                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                @else
+                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                    @endif
+            @endif
         </div>
-    </header>
+        @endif
 
-    <section class="intro">
-        <div class="container">
-            @yield('theme')
-        </div>
-    </section>
 
-    <section class="cont">
-        <div class="Target">
-            @yield('a')
-        </div>
-    </section>
+        <header>
+            <div class="container">
+                <h1>SDG 1：終結貧窮</h1>
+            </div>
+        </header>
 
-    <section class="details">
-        <div class="container">
-            @yield('b')
-    </section>
+        <section class="intro">
+            <div class="container">
+                @yield('theme')
+            </div>
+        </section>
 
-    <section class="table">
-        @yield('tab')
-    </section>
+        <section class="cont">
+            <div class="Target">
+                @yield('a')
+            </div>
+        </section>
 
-    <section class="call-to-action">
-        @include('heard')
-    </section>
+        <section class="details">
+            <div class="container">
+                @yield('b')
+        </section>
 
-    <footer>
-        @include('footer')
-    </footer>
-</body>
+        <section class="table">
+            @yield('tab')
+        </section>
 
-</html>
+        <section class="call-to-action">
+            @include('heard')
+        </section>
+
+        <footer>
+            @include('footer')
+        </footer>
+    </body>
+
+    </html>
